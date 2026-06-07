@@ -20,8 +20,7 @@ contract RebaseTokenPool is TokenPool {
     ) public returns (Pool.LockOrBurnOutV1 memory lockOrBurnOut) {
         _validateLockOrBurn(lockOrBurnIn);
         address receiver = abi.decode(lockOrBurnIn.receiver, (address));
-        uint256 userInterestRate = IRebaseToken(address(i_token))
-            .getUsersInterestRate(receiver);
+        uint256 userInterestRate = IRebaseToken(address(i_token)).getUsersInterestRate(receiver);
         IRebaseToken(address(i_token)).burn(address(this), lockOrBurnIn.amount);
         lockOrBurnOut = Pool.LockOrBurnOutV1({
             destTokenAddress: getRemoteToken(lockOrBurnIn.remoteChainSelector),

@@ -6,10 +6,7 @@
     }
   },
   "lib/chainlink-local": {
-    "tag": {
-      "name": "v0.2.7-beta",
-      "rev": "585ae93ebb0e92d35c732711ed16bb4729cb04dc"
-    }
+    "rev": "cd3bfb8c42716cfb791174314eba2c0d178551b9"
   },
   "lib/forge-std": {
     "tag": {
